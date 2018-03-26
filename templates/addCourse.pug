@@ -1,0 +1,17 @@
+extends ./layout
+
+block main
+    h1.display-4.text-center.my-4 New Course
+
+    .main-content
+        form(action="/admin/addCourse", method="post")
+            .form-group
+                label(for="title") Title:
+                input(class="form-control" type="text" id="title" name="title")
+            .form-group
+                label(for="code") Course Code:
+                input(class="form-control" type="text" id="code" name="code")
+            .form-group
+                label(for="creditHours") Credit Hours:
+                input(class="form-control" type="number" id="creditHours" name="creditHours")
+            button(class="btn btn-primary btn-lg btn-block" type="submit") Submit

@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href="/") Cloud-Store
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      if user
+        li.nav-item
+          a.nav-link(href="/profile") | Profile 
+        li.nav-item
+          a.nav-link(href="/mail") | Mail 
+        li.nav-item
+          a.nav-link(href="/resources") | Academic Resources 
+        li.nav-item
+          a.nav-link(href="/courses") | Course 
+        li.nav-item
+          a.nav-link(href="/logout") | Log Out 
+      else
+        li.nav-item
+          a.nav-link(href="/signup") | Sign Up
+        li.nav-item
+          a.nav-link(href="/login") | Log In

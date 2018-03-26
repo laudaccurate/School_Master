@@ -1,0 +1,25 @@
+extends layout.pug
+
+block main
+    h1.display-4.text-center.my-4 Lecturer Account
+
+    .main-content
+        form(action='/signup', method='POST')
+            .form-group
+                label(for="username") Choose a username:
+                input(class="form-control" type='text' id="username" name='username')
+            .form-group
+                label(for="email") Email:
+                input(class="form-control" type='text' id="email" name='email')
+            .form-group
+                label(for="userType") Register As:
+                select(class="form-control" type='text' id="userType" name='userType')
+                    option(value="lecturer") Lecturer
+            .form-group
+                label(for="password") Choose a password:
+                input(class="form-control" type='password' id="password" name='password')
+            .form-group
+                label(for="confirmPassword") Confirm password:
+                input(class="form-control" type='password' id="confirmPassword" name='confirmPassword')
+                
+            button(class="btn btn-primary btn-lg btn-block" type='submit') Sign Up

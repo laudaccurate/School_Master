@@ -1,0 +1,17 @@
+extends layout
+
+block main
+
+    h1.display-4.text-center.my-4 Mail
+
+    .main-content
+        a(class="btn btn-primary btn-lg btn-block" href="/mail/compose") Compose
+        h4.display-5.text-center.my-4 Inbox
+        ul.list-group
+            each mail in inbox
+                li.list-group-item= `${mail.text} --- from --- ${mail.sender} --- ${mail.createdAt.toLocaleString()}`
+
+        h4.display-5.text-center.my-4 Outbox
+        ul.list-group
+            each mail in outbox
+                li.list-group-item= `${mail.text} --- to --- ${mail.recipient} --- ${mail.createdAt.toLocaleString()}`

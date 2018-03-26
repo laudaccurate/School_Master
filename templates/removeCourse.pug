@@ -1,0 +1,13 @@
+extends layout
+
+block main
+    h1.display-4.text-center.my-4 Remove Course
+
+    .main-content
+        form(action="/admin/removeCourse", method="post")
+            each course in courses
+                .form-group
+                    div(class="custom-control custom-checkbox")
+                        input(type="checkbox" class="custom-control-input" name=course._id id=course._id)
+                        label(class="custom-control-label" for=course._id) #{course.title}
+            button(class="btn btn-primary btn-lg btn-block" type="submit") Remove    

@@ -1,0 +1,26 @@
+extends layout
+
+block main
+    h1.display-4.text-center.my-4 Academic Record
+
+    .main-content
+        table(class="table table-bordered")
+            caption #{user.username}
+            thead.thead-light
+                tr
+                th(scope='col') #
+                th(scope='col') CODE
+                th(scope='col') TITLE
+                th(scope='col') CREDIT
+                th(scope='col') GRADE
+                th(scope='col') GPT
+            each course in user.courses
+                tbody
+                    tr
+                    th(scope='row') #{user.courses.indexOf(course) + 1}
+                    td #{course.code}
+                    td #{course.title}
+                    td #{course.creditHours}
+                    td N/A
+                    td #{course.gpt}
+                

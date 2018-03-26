@@ -1,0 +1,14 @@
+extends layout.pug
+
+block main
+    h1.display-4.text-center.my-4 Log In
+
+    .main-content
+      form(action='/login', method='POST')
+        .form-group
+          label(for="email") Email:
+          input(class="form-control" type='email' id="email" name='email')
+        .form-group
+          label(for="password") Password:
+          input(class="form-control" type='password' id="password" name='password')
+        button(class="btn btn-primary btn-lg btn-block" type='submit') Login

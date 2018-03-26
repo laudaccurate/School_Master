@@ -1,0 +1,14 @@
+extends layout
+
+block main
+    if user.userType === 'admin'
+        h1.display-4.text-center.my-4 Admin Panel
+        .main-content
+            form
+                a(href="admin/addCourse" class="btn btn-primary btn-lg btn-block") Add New Course
+                a(href="admin/addCourse" class="btn btn-primary btn-lg btn-block") Remove Course
+
+    else            
+        h1.display-4.text-center.my-4 Profile
+
+    

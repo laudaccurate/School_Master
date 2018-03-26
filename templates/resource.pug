@@ -1,0 +1,11 @@
+extends layout
+
+block main
+  h1.display-4.text-center.my-4 Academic Resources
+
+  .main-content
+    a(class="btn btn-primary btn-block my-4" href="/resources/upload") Upload a new Resource
+    ul.list-group
+      each resource in resources
+        li.list-group.item
+          a(href=`/resources/${resource._id}/download`)= resource.name

@@ -1,0 +1,27 @@
+extends layout
+
+block main
+
+    h1.dispaly-4.text-center.my-4 New Mail
+
+    .main-content
+        form(action="/mail/compose", method="post")
+            .form-group
+                label(for="sender") From:
+                input(class="form-control" id="sender" type="email", name="sender", value=user.email)
+            .form-group
+                label(for="text") Mail:
+                textarea(class="form-control" id="text" name="text", cols="15", rows="5")
+            .form-group
+                label(for="recipient") To:
+                input(type="text" class="form-control" name="recipient" id="recipient")
+            button(class="btn btn-primary btn-lg btn-block my-4" type="submit") Send
+
+            if user.userType === 'lecturer'
+                .dropdown
+                    button#dropdownMenuButton.btn.btn-primary.dropdown-toggle.btn-block.btn-block(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        |  Send Bulk Mail
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        each course in user.courses
+                            button.dropdown-item(formmethod="POST" formaction=`/lecturer/mail/${course._id}`) #{course.code}
+                        
